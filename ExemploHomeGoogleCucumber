@@ -1,0 +1,21 @@
+Feature: Home interface do Google
+  Como usuário da internet
+  Eu quero acessar a home do Google
+  Para pesquisar informações na internet
+
+Scenario: Verificar título da página
+  Given Eu estou na home do Google
+  When Eu verifico o título da página
+  Then O título da página deve ser "Google"
+
+Scenario: Verificar presença do campo de pesquisa
+  Given Eu estou na home do Google
+  When Eu verifico se o campo de pesquisa está presente
+  Then O campo de pesquisa deve estar presente
+
+Scenario: Verificar funcionamento do botão de pesquisa
+  Given Eu estou na home do Google
+  When Eu digito "teste" no campo de pesquisa e clico no botão de pesquisa
+  Then Eu deveria ser redirecionado para a página de resultados de pesquisa com "teste"
+
+
