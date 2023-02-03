@@ -1,0 +1,28 @@
+//Código em Java para abrir o navegador chrome, acessar o google e pesquisar a previsão do tempo para uma dada cidade
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class GoogleSearch {
+  public static void main(String[] args) {
+    // Defina o caminho para o driver do Chrome
+    System.setProperty("webdriver.chrome.driver", "C:/path/to/chromedriver.exe");
+
+    // Inicie o driver do Chrome
+    WebDriver driver = new ChromeDriver();
+
+    // Acesse o Google
+    driver.get("https://www.google.com/");
+
+    // Localize o campo de pesquisa pelo seu id
+    WebElement searchBox = driver.findElement(By.name("q"));
+
+    // Digite a pesquisa
+    searchBox.sendKeys("previsão de chuvas em [nome da cidade]"); //substitua "nome da cidade" pelo nome real da cidade para qual você quer saber a previsão
+
+    // Envie a pesquisa
+    searchBox.submit();
+  }
+}
